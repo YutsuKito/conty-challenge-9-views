@@ -1,7 +1,7 @@
 import {fail,required} from './http.js';
 export function classify(series) {
  required(Array.isArray(series)&&series.length>=12&&series.length<=500,'Série precisa de 12 a 500 horas');
- required(series.every(v=>Number.isSafeInteger(v)&&v>=0),'Views por hora devem ser inteiras não negativas');
+ required(Array.from(series).every(v=>Number.isSafeInteger(v)&&v>=0),'Views por hora devem ser inteiras não negativas');
  const sorted=[...series].sort((a,b)=>a-b);const baseline=Math.max(1,sorted[Math.floor(series.length*.25)]);
  const peak=Math.max(...series);const peakRatio=peak/baseline;
  let highPlateau=0,run=0,repetition=0,seq=1,abruptDrop=1,abruptRise=1;

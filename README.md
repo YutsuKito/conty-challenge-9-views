@@ -29,3 +29,12 @@ O autor realizou a revisão pessoal dos nove desafios, conforme declarado nesta 
 | Qualidade estrutural | Conferir a combinação conservadora de sinais e os limites de inconclusive. O resultado sintético não sustenta ação financeira automática. |
 
 **Limite confirmado na revisão pessoal:** FPR de 0% corresponde a 0 falsos positivos entre 120 casos legítimos sintéticos, gerados com seed 20261009. A taxa de falsos positivos em tráfego real não foi medida. Avaliar essa taxa exige dados reais rotulados, independentes do gerador, e revisão dos casos; este protótipo não fornece evidência para declarar precisão real ou tomar decisões financeiras automaticamente.
+
+
+## Verificação completa em 09/10/2026
+
+Séries com posições ausentes são rejeitadas, evitando classificação com sinais NaN. A avaliação sintética continua independente dessa validação.
+
+O transporte HTTP rejeita JSON nulo, arrays e valores primitivos com 400 antes de chamar o serviço. Parâmetros de rota são decodificados uma vez; escape inválido retorna 400. Dois testes de transporte verificam esses comportamentos, incluindo códigos com caracteres especiais.
+
+Resultado desta rodada: 12 testes aprovados, zero falhas; checagem sintática aprovada e smoke HTTP com entrada válida 200 e inválida 400. As correções e a nova validação foram realizadas pelo Codex; não são atribuídas como revisão manual do autor.
