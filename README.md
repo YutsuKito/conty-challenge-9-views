@@ -28,5 +28,4 @@ O autor realizou a revisão pessoal dos nove desafios, conforme declarado nesta 
 | Geração e revisão dos testes | Cobrir platô mecânico, pico viral, abstenção, entradas inválidas, reprodutibilidade e casos sintéticos independentes. Manter teste que compara o FPR calculado com o README. |
 | Qualidade estrutural | Conferir a combinação conservadora de sinais e os limites de inconclusive. O resultado sintético não sustenta ação financeira automática. |
 
-**Atenção alta identificada na revisão pessoal:** FPR de 0% vale para o dataset sintético e não demonstra precisão com dados reais.
-
+**Limite confirmado na revisão pessoal:** FPR de 0% corresponde a 0 falsos positivos entre 120 casos legítimos sintéticos, gerados com seed 20261009. A taxa de falsos positivos em tráfego real não foi medida. Avaliar essa taxa exige dados reais rotulados, independentes do gerador, e revisão dos casos; este protótipo não fornece evidência para declarar precisão real ou tomar decisões financeiras automaticamente.
